@@ -1,0 +1,13 @@
+[window]
+opacity = 0.75
+padding.x = 10
+padding.y = 10
+
+[colors]
+[colors.primary]
+foreground = "#8FBCBB"
+
+background = "#3B4252"
+
+bright_foreground = "#D8DEE9"
+
