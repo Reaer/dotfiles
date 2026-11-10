@@ -1,0 +1,44 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias hconf='vim ~/.config/hypr/hyprland.lua' #edit hyprland config
+alias hpconf='vim ~/.config/hypr/hyprpaper.conf' #edit wallpaper
+alias aconf='vim ~/.config/alacritty/alacritty.toml' #edit terminal 
+alias bconf='vim ~/.bashrc' #edit this bashrc
+alias update='sudo pacman -Syu' #update with pacman
+alias proj='cd ~/Projects' #change directory to Projects
+alias wttr.in='curl wttr.in/los-angeles?u' # I think this starts the weather thing
+alias blog='cd ~/Projects/blog/' 
+alias blog3='cd ~/Projects/blog3/'
+alias final='cd ~/Projects/final-blog/'
+alias web='cd ~/Projects/website'
+alias vram='echo "scale=2; $(cat /sys/class/drm/card1/device/mem_info_vram_used) / 1024 / 1024 / 1024" | bc -l && echo "GB"'
+PS1="\[\e[0;34m\]\u\[\e[0m\]@\[\e[0;32m\]\h \[\e[0m\]\w\$ " #edit terminal layout and colors
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+function hello() {
+    echo "Hello, $1!"
+}
+
+export -f hello
+
+function supac() {
+    sudo pacman -S "$1"
+}
+
+export -f supac
